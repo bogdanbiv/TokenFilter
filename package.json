@@ -8,12 +8,11 @@
     "react": "v16.0.0-rc.2"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.3",
     "kcd-scripts": "^0.8.3",
     "react": "v16.0.0-rc.2",
-    "react-dom": "v16.0.0-rc.2",
-    "@storybook/react": "^3.2.3"
+    "react-dom": "v16.0.0-rc.2"
   },
-
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
     "rules": {
@@ -23,7 +22,6 @@
       "react/jsx-indent": "off"
     }
   },
-
   "eslintIgnore": [
     "node_modules",
     "coverage",
@@ -31,13 +29,10 @@
     "storybook-static",
     "typings"
   ],
-
   "author":
     "Andrei Glingeanu <andrei.glingeanu@gmail.com> (https://andreiglingeanu.me/)",
   "license": "MIT",
-
   "files": ["dist", "typings"],
-
   "scripts": {
     "add-contributor": "kcd-scripts contributors add",
     "doc": "doctoc README.md --maxlevel 2 --notitle",
@@ -54,5 +49,8 @@
       "cd stories && npm install && cd .. && build-storybook -c stories",
     "validate": "kcd-scripts validate lint,build-and-test,test:cover,test:flow",
     "precommit": "kcd-scripts precommit"
+  },
+  "dependencies": {
+    "downshift": "^1.4.0"
   }
 }

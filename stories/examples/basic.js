@@ -1,6 +1,48 @@
 import React, {Component} from 'react'
 
-// import Autocomplete from '../../src'
+import Downshift from 'downshift'
+
+function BasicAutocomplete({items, onChange}) {
+  return (
+    <Downshift onChange={onChange}>
+      {({
+        getInputProps,
+        getItemProps,
+        isOpen,
+        inputValue,
+        selectedItem,
+        highlightedIndex,
+      }) => (
+        <div>
+          <input {...getInputProps({placeholder: 'Favorite color ?'})} />
+          {isOpen ? (
+            <div style={{border: '1px solid #ccc'}}>
+              {items
+                .filter(
+                  i =>
+                    !inputValue ||
+                    i.toLowerCase().includes(inputValue.toLowerCase()),
+                )
+                .map((item, index) => (
+                  <div
+                    {...getItemProps({item})}
+                    key={item}
+                    style={{
+                      backgroundColor:
+                        highlightedIndex === index ? 'gray' : 'white',
+                      fontWeight: selectedItem === item ? 'bold' : 'normal',
+                    }}
+                  >
+                    {item}
+                  </div>
+                ))}
+            </div>
+          ) : null}
+        </div>
+      )}
+    </Downshift>
+  )
+}
 
 class Examples extends Component {
   state = {
@@ -15,17 +57,10 @@ class Examples extends Component {
     const items = ['Black', 'Red', 'Green', 'Blue', 'Orange', 'Purple']
 
     return (
-      <div>
-        <h2>basic example</h2>
-
-        <div display="flex" justifyContent="center">
-          {items.map(item => (
-            <div onClick={() => this.changeHandler(item)} key={item}>
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
+      <BasicAutocomplete
+        items={items}
+        onChange={selectedItem => console.log(selectedItem)}
+      />
     )
   }
 }
