@@ -1,0 +1,58 @@
+{
+  "name": "token-filter",
+  "description": "Token Filter",
+  "main": "dist/token-filter.cjs.js",
+  "jsnext:main": "dist/token-filter.es.js",
+  "module": "dist/token-filter.es.js",
+  "peerDependencies": {
+    "react": "v16.0.0-rc.2"
+  },
+  "devDependencies": {
+    "kcd-scripts": "^0.8.3",
+    "react": "v16.0.0-rc.2",
+    "react-dom": "v16.0.0-rc.2",
+    "@storybook/react": "^3.2.3"
+  },
+
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js",
+    "rules": {
+      "max-lines": "off",
+      "no-eq-null": "off",
+      "eqeqeq": "off",
+      "react/jsx-indent": "off"
+    }
+  },
+
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "storybook-static",
+    "typings"
+  ],
+
+  "author":
+    "Andrei Glingeanu <andrei.glingeanu@gmail.com> (https://andreiglingeanu.me/)",
+  "license": "MIT",
+
+  "files": ["dist", "typings"],
+
+  "scripts": {
+    "add-contributor": "kcd-scripts contributors add",
+    "doc": "doctoc README.md --maxlevel 2 --notitle",
+    "build": "kcd-scripts build --browser --p-react",
+    "lint": "kcd-scripts lint",
+    "test": "kcd-scripts test",
+    "test:cover": "kcd-scripts test --coverage",
+    "test:update": "npm run test:cover -s -- --updateSnapshot",
+    "test:flow": "echo 'Write the flow command please...'",
+    "test:build": "kcd-scripts test --config other/jest.config.js --no-watch",
+    "build-and-test": "npm run build -s && npm run test:build -s",
+    "storybook": "start-storybook -p 6006 -c stories",
+    "storybook:build":
+      "cd stories && npm install && cd .. && build-storybook -c stories",
+    "validate": "kcd-scripts validate lint,build-and-test,test:cover,test:flow",
+    "precommit": "kcd-scripts precommit"
+  }
+}
