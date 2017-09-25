@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/.*
+.*/test/.*
+.*/build/.*
+.*/examples/.*
+.*/benchmarks/.*
+.*/ct-flow-typed/defs/.*
+
+[include]
+
+[libs]
+flow
+flow-typed
+
