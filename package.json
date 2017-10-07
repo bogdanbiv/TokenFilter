@@ -5,14 +5,14 @@
   "jsnext:main": "dist/token-filter.es.js",
   "module": "dist/token-filter.es.js",
   "peerDependencies": {
-    "react": "v16.0.0-rc.2"
+    "react": "v16.0.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.2.3",
     "babel-preset-flow": "^6.23.0",
     "kcd-scripts": "^0.8.3",
-    "react": "v16.0.0-rc.2",
-    "react-dom": "v16.0.0-rc.2"
+    "react": "v16.0.0",
+    "react-dom": "v16.0.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
@@ -52,6 +52,7 @@
     "precommit": "kcd-scripts precommit"
   },
   "dependencies": {
-    "downshift": "^1.4.0"
+    "downshift": "^1.4.0",
+    "flow-bin": "^0.56.0"
   }
 }

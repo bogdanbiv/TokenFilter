@@ -3,8 +3,6 @@
 .*/test/.*
 .*/build/.*
 .*/examples/.*
-.*/benchmarks/.*
-.*/ct-flow-typed/defs/.*
 
 [include]
 
