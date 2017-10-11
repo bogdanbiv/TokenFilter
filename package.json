@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "downshift": "^1.4.0",
-    "flow-bin": "^0.56.0"
+    "flow-bin": "^0.56.0",
+    "lodash": "^4.17.4"
   }
 }
