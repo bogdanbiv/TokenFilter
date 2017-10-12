@@ -7,16 +7,21 @@ type Props = {
   onChange: Function,
 }
 
+import BasicText from './value-types/text.js'
+import NumberValue from './value-types/number.js'
+
 export default function({
   currentlyConstructedFilter,
   categoryType,
   onChange,
 }: Props) {
+  let ValueInput = BasicText
+
+  if (categoryType === 'number') {
+    ValueInput = NumberValue
+  }
+
   return (
-    <input
-      type="text"
-      value={currentlyConstructedFilter.value}
-      onInput={e => onChange(e.target.value)}
-    />
+    <ValueInput value={currentlyConstructedFilter.value} onChange={onChange} />
   )
 }
