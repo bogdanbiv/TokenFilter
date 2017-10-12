@@ -4,15 +4,12 @@
   "main": "dist/token-filter.cjs.js",
   "jsnext:main": "dist/token-filter.es.js",
   "module": "dist/token-filter.es.js",
-  "peerDependencies": {
-    "react": "v16.0.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@storybook/react": "^3.2.3",
     "babel-preset-flow": "^6.23.0",
-    "kcd-scripts": "^0.8.3",
-    "react": "v16.0.0",
-    "react-dom": "v16.0.0"
+    "flow-bin": "^0.56.0",
+    "kcd-scripts": "^0.8.3"
   },
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
@@ -53,7 +50,9 @@
   },
   "dependencies": {
     "downshift": "^1.4.0",
-    "flow-bin": "^0.56.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react": "v16.0.0",
+    "react-dom": "v16.0.0"
   }
 }

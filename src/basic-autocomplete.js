@@ -1,17 +1,23 @@
+// @flow
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 
 import Downshift from 'downshift'
 
-function BasicAutocomplete({
+export default function BasicAutocomplete({
+  controlledValue,
   items,
   onChange,
+  placeholder,
+  disabled,
 }: {
-  items: Array<string>,
-  onChange: (Array<string>) => void,
+  controlledValue: any,
+  items: Array<any>,
+  onChange: any => void,
+  placeholder: string,
+  disabled: boolean,
 }) {
   return (
-    <Downshift onChange={onChange}>
+    <Downshift selectedItem={controlledValue} onChange={onChange}>
       {({
         getInputProps,
         getItemProps,
@@ -19,9 +25,19 @@ function BasicAutocomplete({
         inputValue,
         selectedItem,
         highlightedIndex,
+        clearSelection,
       }) => (
         <div>
-          <input {...getInputProps({placeholder: 'Favorite color ?'})} />
+          <input
+            {...getInputProps({
+              placeholder,
+              disabled,
+              style: {
+                width: '300px',
+              },
+            })}
+          />
+
           {isOpen ? (
             <div style={{border: '1px solid #ccc'}}>
               {items
@@ -51,25 +67,8 @@ function BasicAutocomplete({
   )
 }
 
-class Examples extends Component {
-  state = {
-    selectedColor: '',
-  }
-
-  changeHandler = selectedColor => {
-    this.setState({selectedColor})
-  }
-
-  render() {
-    const items = ['Black', 'Red', 'Green', 'Blue', 'Orange', 'Purple']
-
-    return (
-      <BasicAutocomplete
-        items={items}
-        onChange={selectedItem => console.log(selectedItem)}
-      />
-    )
-  }
+BasicAutocomplete.defaultProps = {
+  placeholder: 'Select...',
+  disabled: false,
+  controlledValue: false,
 }
-
-export default Examples
