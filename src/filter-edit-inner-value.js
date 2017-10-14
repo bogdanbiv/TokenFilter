@@ -9,6 +9,7 @@ type Props = {
 
 import BasicText from './value-types/text.js'
 import NumberValue from './value-types/number.js'
+import ComboboxValue from './value-types/combobox.js'
 
 export default function({
   currentlyConstructedFilter,
@@ -20,8 +21,15 @@ export default function({
   if (category.type === 'number') {
     ValueInput = NumberValue
   }
+  if (category.type === 'combobox') {
+    ValueInput = ComboboxValue
+  }
 
   return (
-    <ValueInput value={currentlyConstructedFilter.value} onChange={onChange} />
+    <ValueInput
+      category={category}
+      value={currentlyConstructedFilter.value}
+      onChange={onChange}
+    />
   )
 }

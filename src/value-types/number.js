@@ -1,6 +1,7 @@
-import React from 'react'
 // @flow
-export default function({value, onChange}) {
+import React from 'react'
+
+export default function({value, onChange}: {value: any, onChange: Function}) {
   return (
     <input
       type="number"

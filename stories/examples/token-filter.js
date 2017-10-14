@@ -59,7 +59,7 @@ class ExampleTokenFilter extends Component<
             category: 'Country',
             type: 'combobox',
             getItems: () => {
-              return []
+              return ['Romania', 'Spain', 'USA', 'Portugal']
             },
           },
         ]}
