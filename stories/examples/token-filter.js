@@ -54,6 +54,14 @@ class ExampleTokenFilter extends Component<
             category: 'Price',
             type: 'number',
           },
+
+          {
+            category: 'Country',
+            type: 'combobox',
+            getItems: () => {
+              return []
+            },
+          },
         ]}
       />,
     ]

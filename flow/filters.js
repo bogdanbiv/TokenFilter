@@ -26,4 +26,5 @@ declare type TokenFilterEntry = {
 declare type TokenFilterCategoryDescritor = {
   category: TokenFilterCategory,
   type: TokenFilterCategoryType,
+  getItems?: () => Array<string>,
 }

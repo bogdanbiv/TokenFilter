@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 type Props = {
   currentlyConstructedFilter: TokenFilterEntryCreating,
-  categoryType: TokenFilterCategoryType,
+  category: TokenFilterCategoryDescritor,
   onChange: Function,
 }
 
@@ -12,12 +12,12 @@ import NumberValue from './value-types/number.js'
 
 export default function({
   currentlyConstructedFilter,
-  categoryType,
+  category,
   onChange,
 }: Props) {
   let ValueInput = BasicText
 
-  if (categoryType === 'number') {
+  if (category.type === 'number') {
     ValueInput = NumberValue
   }
 

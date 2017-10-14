@@ -43,7 +43,7 @@ class TokenFilter extends Component<Props, State> {
     )
   }
 
-  getCurrentCategoryType(): ?TokenFilterCategoryType {
+  getCurrentCategory(): TokenFilterCategoryDescritor {
     let foundCategory: TokenFilterCategoryDescritor = filter(
       this.props.options,
       {
@@ -51,13 +51,16 @@ class TokenFilter extends Component<Props, State> {
       },
     )[0]
 
-    return foundCategory ? foundCategory.type : null
+    return foundCategory
+      ? foundCategory
+      : {
+          category: 'Empty',
+          type: 'text',
+        }
   }
 
-  currentCategoryOrText(): TokenFilterCategoryType {
-    let type = this.getCurrentCategoryType()
-
-    return type ? type : 'text'
+  getCurrentCategoryType(): TokenFilterCategoryType {
+    return this.getCurrentCategory().type
   }
 
   getOperatorsItems() {
@@ -76,6 +79,7 @@ class TokenFilter extends Component<Props, State> {
         <h1>Add a filter</h1>
 
         <h4>Select a category</h4>
+
         <BasicAutocomplete
           placeholder="Pick a category..."
           controlledValue={this.state.currentlyConstructedFilter.category}
@@ -114,7 +118,7 @@ class TokenFilter extends Component<Props, State> {
 
         <h4>Select Value</h4>
 
-        {this.state.currentlyConstructedFilter.operator ? (
+        {this.state.currentlyConstructedFilter.category ? (
           <FilterEditInnerValue
             currentlyConstructedFilter={this.state.currentlyConstructedFilter}
             onChange={value =>
@@ -124,12 +128,10 @@ class TokenFilter extends Component<Props, State> {
                   value,
                 },
               })}
-            categoryType={this.currentCategoryOrText()}
+            category={this.getCurrentCategory()}
           />
         ) : (
-          <p>
-            In order to pick a value, please select a category and an operator.
-          </p>
+          <p>In order to pick a value, please select a category first.</p>
         )}
 
         <br />
