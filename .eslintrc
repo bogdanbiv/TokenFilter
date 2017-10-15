@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "./node_modules/kcd-scripts/eslint.js", "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ]
+}
+

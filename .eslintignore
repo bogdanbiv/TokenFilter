@@ -1,0 +1,9 @@
+node_modules/
+flow/
+flow-typed/
+coverage/
+dist/
+build/
+out/
+.next/
+

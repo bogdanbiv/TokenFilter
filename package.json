@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "downshift": "^1.4.0",
+    "eslint-plugin-flowtype": "^2.39.1",
     "lodash": "^4.17.4",
     "moment": "^2.19.1",
     "prop-types": "^15.6.0",
