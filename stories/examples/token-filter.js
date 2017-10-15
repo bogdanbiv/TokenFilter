@@ -62,6 +62,11 @@ class ExampleTokenFilter extends Component<
               return ['Romania', 'Spain', 'USA', 'Portugal']
             },
           },
+
+          {
+            category: 'Completion Date',
+            type: 'date',
+          },
         ]}
       />,
     ]

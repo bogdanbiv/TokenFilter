@@ -51,8 +51,11 @@
   "dependencies": {
     "downshift": "^1.4.0",
     "lodash": "^4.17.4",
+    "moment": "^2.19.1",
     "prop-types": "^15.6.0",
-    "react": "v16.0.0",
-    "react-dom": "v16.0.0"
+    "react": "^16.0.0",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^13.0.5",
+    "react-dom": "^16.0.0"
   }
 }
