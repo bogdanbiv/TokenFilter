@@ -2,8 +2,10 @@
   "extends": [
     "./node_modules/kcd-scripts/eslint.js", "plugin:flowtype/recommended"
   ],
-  "plugins": [
-    "flowtype"
-  ]
+  "plugins": ["flowtype"],
+  "rules": {
+    "react/jsx-closing-bracket-location": 0,
+    "import/prefer-default-export": 0
+  }
 }
 

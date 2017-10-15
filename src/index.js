@@ -2,11 +2,11 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-import {keys, property, filter} from 'lodash'
+import {property, filter} from 'lodash'
 
-import BasicAutocomplete from './basic-autocomplete.js'
-import FilterEditInnerValue from './filter-edit-inner-value.js'
-import {getOperatorsForCategoryType} from '../lib/support.js'
+import {getOperatorsForCategoryType} from '../lib/support'
+import BasicAutocomplete from './basic-autocomplete'
+import FilterEditInnerValue from './filter-edit-inner-value'
 
 type Props = {
   options: Array<TokenFilterCategoryDescritor>,
@@ -18,7 +18,7 @@ type State = {
   currentlyConstructedFilter: TokenFilterEntryCreating,
 }
 
-const DEFAULT_FILTER = () => ({
+const constructDefaultFilter = () => ({
   category: null,
   value: '',
   operator: null,
@@ -32,7 +32,7 @@ class TokenFilter extends Component<Props, State> {
   }
 
   state = {
-    currentlyConstructedFilter: DEFAULT_FILTER(),
+    currentlyConstructedFilter: constructDefaultFilter(),
   }
 
   isButtonDisabled(): boolean {
@@ -44,7 +44,7 @@ class TokenFilter extends Component<Props, State> {
   }
 
   getCurrentCategory(): TokenFilterCategoryDescritor {
-    let foundCategory: TokenFilterCategoryDescritor = filter(
+    const foundCategory: TokenFilterCategoryDescritor = filter(
       this.props.options,
       {
         category: this.state.currentlyConstructedFilter.category,
@@ -64,7 +64,7 @@ class TokenFilter extends Component<Props, State> {
   }
 
   getOperatorsItems() {
-    let currentCategoryType = this.getCurrentCategoryType()
+    const currentCategoryType = this.getCurrentCategoryType()
 
     if (!currentCategoryType) return []
 
@@ -159,7 +159,9 @@ class TokenFilter extends Component<Props, State> {
               },
             ])
 
-            this.setState({currentlyConstructedFilter: DEFAULT_FILTER()})
+            this.setState({
+              currentlyConstructedFilter: constructDefaultFilter(),
+            })
           }}
         >
           Add A filter

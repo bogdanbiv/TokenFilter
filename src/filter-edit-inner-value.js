@@ -1,5 +1,10 @@
 // @flow
-import React, {Component} from 'react'
+import React from 'react'
+
+import BasicText from './value-types/text'
+import NumberValue from './value-types/number'
+import ComboboxValue from './value-types/combobox'
+import DateValue from './value-types/date'
 
 type Props = {
   currentlyConstructedFilter: TokenFilterEntryCreating,
@@ -7,12 +12,7 @@ type Props = {
   onChange: Function,
 }
 
-import BasicText from './value-types/text.js'
-import NumberValue from './value-types/number.js'
-import ComboboxValue from './value-types/combobox.js'
-import DateValue from './value-types/date.js'
-
-export default function({
+export default function TokenFilterEditInnerValue({
   currentlyConstructedFilter,
   category,
   onChange,
@@ -39,3 +39,5 @@ export default function({
     />
   )
 }
+
+TokenFilterEditInnerValue.displayName = 'TokenFilterEditInnerValue'

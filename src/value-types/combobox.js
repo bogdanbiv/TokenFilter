@@ -1,7 +1,9 @@
 // @flow
-import React, {Component} from 'react'
+/* eslint no-console: "off" */
 
-import BasicAutocomplete from '../basic-autocomplete.js'
+import React from 'react'
+
+import BasicAutocomplete from '../basic-autocomplete'
 
 export default function ComboboxValue({
   value,
@@ -18,13 +20,13 @@ export default function ComboboxValue({
     )
   }
 
-  let itemsGetter = category.getItems || (() => [])
+  const itemsGetter = category.getItems || (() => [])
 
   return (
     <BasicAutocomplete
       placeholder="Pick a value..."
       controlledValue={value}
-      onChange={value => onChange(value)}
+      onChange={receivedValue => onChange(receivedValue)}
       items={itemsGetter()}
     />
   )

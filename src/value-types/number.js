@@ -1,7 +1,13 @@
 // @flow
 import React from 'react'
 
-export default function({value, onChange}: {value: any, onChange: Function}) {
+export default function NumberValueType({
+  value,
+  onChange,
+}: {
+  value: any,
+  onChange: Function,
+}) {
   return (
     <input
       type="number"
@@ -10,3 +16,5 @@ export default function({value, onChange}: {value: any, onChange: Function}) {
     />
   )
 }
+
+NumberValueType.displayName = 'NumberValueType'

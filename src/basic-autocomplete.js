@@ -1,5 +1,5 @@
 // @flow
-import React, {Component} from 'react'
+import React from 'react'
 
 import Downshift from 'downshift'
 
@@ -25,7 +25,6 @@ export default function BasicAutocomplete({
         inputValue,
         selectedItem,
         highlightedIndex,
-        clearSelection,
       }) => (
         <div>
           <input

@@ -1,10 +1,18 @@
 import React, {Component} from 'react'
-import 'react-dates/initialize'
-import 'react-dates/lib/css/_datepicker.css'
+import PropTypes from 'prop-types'
+import ignoredInitialize from 'react-dates/initialize'
 import {SingleDatePicker} from 'react-dates'
 import moment from 'moment'
 
+// TODO: extract this in a separated file
+import ignoredCSS from 'react-dates/lib/css/_datepicker.css'
+
 export default class TokenFilterValueDate extends Component {
+  static propTypes = {
+    value: PropTypes.any.isRequired,
+    onChange: PropTypes.func.isRequired,
+  }
+
   state = {
     focused: false,
   }
