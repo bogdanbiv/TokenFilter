@@ -1,3 +1,4 @@
+// @flow
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import ignoredInitialize from 'react-dates/initialize'
@@ -5,7 +6,7 @@ import {SingleDatePicker} from 'react-dates'
 import moment from 'moment'
 
 // TODO: extract this in a separated file
-import ignoredCSS from 'react-dates/lib/css/_datepicker.css'
+// import ignoredCSS from 'react-dates/lib/css/_datepicker.css'
 
 export default class TokenFilterValueDate extends Component {
   static propTypes = {
