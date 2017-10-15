@@ -8,4 +8,5 @@ build/
 out/
 .next/
 rollup.config.js
+styles.js
 
