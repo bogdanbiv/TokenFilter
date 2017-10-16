@@ -1,5 +1,6 @@
 // @flow
 import TokenFilter from '../../src/index.js'
+import css from '../../styles.js'
 import React, {Component} from 'react'
 
 class ExampleTokenFilter extends Component<
@@ -66,6 +67,11 @@ class ExampleTokenFilter extends Component<
           {
             category: 'Completion Date',
             type: 'date',
+          },
+
+          {
+            category: 'Meeting Time',
+            type: 'time',
           },
         ]}
       />,

@@ -9,7 +9,12 @@ declare type TokenFilterBasicOperator =
   | '>='
 
 declare type TokenFilterCategory = string
-declare type TokenFilterCategoryType = 'text' | 'date' | 'combobox' | 'number'
+declare type TokenFilterCategoryType =
+  | 'text'
+  | 'date'
+  | 'combobox'
+  | 'number'
+  | 'time'
 
 declare type TokenFilterEntryCreating = {
   category: ?TokenFilterCategory,

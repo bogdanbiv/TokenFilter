@@ -5,6 +5,7 @@ import BasicText from './value-types/text'
 import NumberValue from './value-types/number'
 import ComboboxValue from './value-types/combobox'
 import DateValue from './value-types/date'
+import TimeValue from './value-types/time'
 
 type Props = {
   currentlyConstructedFilter: TokenFilterEntryCreating,
@@ -29,6 +30,10 @@ export default function TokenFilterEditInnerValue({
 
   if (category.type === 'date') {
     ValueInput = DateValue
+  }
+
+  if (category.type === 'time') {
+    ValueInput = TimeValue
   }
 
   return (
