@@ -22,12 +22,14 @@ export default function BasicAutocomplete({
         getInputProps,
         getItemProps,
         isOpen,
+        toggleMenu,
         inputValue,
         selectedItem,
         highlightedIndex,
       }) => (
         <div>
           <input
+            onFocus={toggleMenu}
             {...getInputProps({
               placeholder,
               disabled,
