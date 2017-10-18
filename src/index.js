@@ -89,6 +89,7 @@ class TokenFilter extends Component<Props, State> {
                 ...this.state.currentlyConstructedFilter,
                 category,
                 operator: null,
+                value: '',
               },
             })}
           items={this.props.options.map(property('category'))}
@@ -100,11 +101,9 @@ class TokenFilter extends Component<Props, State> {
           disabled={!this.state.currentlyConstructedFilter.category}
           controlledValue={this.state.currentlyConstructedFilter.operator}
           placeholder={
-            this.state.currentlyConstructedFilter.category ? (
-              'Pick an operator'
-            ) : (
-              'Please pick a category before selecting an operator'
-            )
+            this.state.currentlyConstructedFilter.category
+              ? 'Pick an operator'
+              : 'Please pick a category before selecting an operator'
           }
           onChange={operator =>
             this.setState({
@@ -139,11 +138,9 @@ class TokenFilter extends Component<Props, State> {
         <button
           disabled={this.isButtonDisabled()}
           title={
-            this.isButtonDisabled() ? (
-              "You can't add the filter until you select everything."
-            ) : (
-              'Add the filter'
-            )
+            this.isButtonDisabled()
+              ? "You can't add the filter until you select everything."
+              : 'Add the filter'
           }
           onClick={() => {
             if (!this.props.receiveNewFilters) return
